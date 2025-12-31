@@ -1,0 +1,79 @@
+<!-- Build a Simple Todo List Using Array
+Add items to array and display dynamically. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo List</title>
+</head>
+<style>
+    h1 {
+        margin-left: 70px;
+        font-size: 50px;
+    }
+
+    .div1 {
+        
+        font-size: 50px;
+        margin: 20px 20px;
+    }
+
+    label {
+        border-color: black;
+    }
+
+    input {
+        height: 30px;
+        width: 250px;
+        border-color: black;
+        font-size: large;
+    }
+
+    button {
+        font-weight: bold;
+        font-size: large;
+        height: 35px;
+        width: 150px;
+    }
+
+    
+
+    ul {
+        list-style-position: inside;
+    }
+</style>
+
+<body>
+    <h1>To Do List</h1>
+    <div class="div1">
+        <fieldset style="width: fit-content;">
+            <label for="i1">Enter Your list</label>
+            <br>
+            <input id="i1" type="text">
+            <br>
+            <button onclick="addToDo()" type="button">ADD TO LIST</button>
+        </fieldset>
+
+    </div>
+
+    <ul id="ol1">List Of Works To Do</ul>
+    <script>
+        let todo = [];
+        function addToDo() {
+            let list = document.getElementById("i1").value.trim();
+            console.log("Entered function");
+            if (list !== "") {
+                todo.push(list);
+                const item = document.createElement("li");
+                item.textContent = list;
+                document.getElementById("ol1").appendChild(item);
+                document.getElementById("i1").value = "";
+            }
+        }
+    </script>
+</body>
+
+</html>
